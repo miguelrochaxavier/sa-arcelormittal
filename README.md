@@ -10,7 +10,7 @@
 ## 🚀 Tecnologias
 
 <p align="left"> 
- <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
+ <h2>A linguem utilizada neste projeto foi a linguagem Visualg 3.0 e Portugol</h2>
 
 
 ## 💻 Projeto
