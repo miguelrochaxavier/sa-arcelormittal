@@ -1,8 +1,8 @@
 
 Algoritmo "semnome"
-// Disciplina   : [Linguagem e Lógica de Programação]
+// Disciplina   : [Linguagem e LÃ³gica de ProgramaÃ§Ã£o]
 // Professor   : Antonio Carlos Nicolodi
-// Descrição   : Aqui você descreve o que o programa faz! (função)
+// DescriÃ§Ã£o   : Aqui vocÃª descreve o que o programa faz! (funÃ§Ã£o)
 // Autor(a)    : Nome do(a) aluno(a)
 // Data atual  : 27/11/2024
 
@@ -15,36 +15,36 @@ Tipo
    fimregistro
 
 Var
-   // Seção de Declarações das variáveis
+   // SeÃ§Ã£o de DeclaraÃ§Ãµes das variÃ¡veis
    equipamentos: vetor[0..10] de equipamento
    i : inteiro
    num_equipamento : inteiro
    opc : caractere
-procedimento adicionar_equipamentos(id, indice: inteiro; nome: caractere)
+procedimento adicionar_equipamentos(id, indice: inteiro; nome: caractere) // Crindo um procedimento para adicionar todos os equipamentos ao invetario
 var
    i: inteiro
 inicio
    se equipamentos[indice].id = 0 entao
       equipamentos[indice].id := id
       equipamentos[indice].nome := nome
-      equipamentos[indice].status := "Disponível"  // Corrigido grafia
+      equipamentos[indice].status := "DisponÃ­vel"  
       equipamentos[indice].necessidade_manuntencao := falso
-      escreval("Equipamento adicionado ao inventário: ", nome)
+      escreval("Equipamento adicionado ao inventÃ¡rio: ", nome)
    fimse
 fimprocedimento
 
-procedimento atualizar_status(id: inteiro; novo_status: caractere)  // Corrigido para 'caractere'
+procedimento atualizar_status(id: inteiro; novo_status: caractere)  
 var
    i: inteiro
 inicio
    se equipamentos[i].id = id entao
       equipamentos[i].status := novo_status
-      se novo_status = "Em manutenção, aguarde um momento!" entao // Corrigido para comparação
+      se novo_status = "Em manutenÃ§Ã£o, aguarde um momento!" entao 
          equipamentos[i].necessidade_manuntencao := verdadeiro
       senao
          equipamentos[i].necessidade_manuntencao := falso
       fimse
-      escreval("Status do equipamento ", equipamentos[i].nome, " atualizado para ", novo_status)  // Corrigido para espaço
+      escreval("Status do equipamento ", equipamentos[i].nome, " atualizado para ", novo_status)  
    fimse
 fimprocedimento
 
@@ -56,28 +56,28 @@ fimprocedimento
 procedimento analisar_processos()
 inicio
    escreval("Analisando processos produtivos...")
-   escreval("Sugestões de melhorias: Aumentar a eficiência em X%.")  // Removido o 'empresa' não declarado
+   escreval("SugestÃµes de melhorias: Aumentar a eficiÃªncia em X%.") 
 fimprocedimento
 
 Inicio
-   // Seção de Comandos, procedimento, funções, operadores, etc...
+   // SeÃ§Ã£o de Comandos, procedimento, funÃ§Ãµes, operadores, etc...
    num_equipamento<-randi(5)+1
 
-   escreval("Deseja acessar o sistema de manutenção da empresa ArcelorMittal? ")
+   escreval("Deseja acessar o sistema de manutenÃ§Ã£o da empresa ArcelorMittal? ")
    leia(opc)
 
    se opc = "sim" entao
-      adicionar_equipamentos(1023, 0, "Prensa Hidráulica")
-      adicionar_equipamentos(1065, 1, "Barra de aço")
+      adicionar_equipamentos(1023, 0, "Prensa HidrÃ¡ulica")
+      adicionar_equipamentos(1065, 1, "Barra de aÃ§o")
       adicionar_equipamentos(2062, 2, "Ferro")
       adicionar_equipamentos(1357, 3, "Metal acriloco")
-      adicionar_equipamentos(1942, 4, "Metal líquido")
+      adicionar_equipamentos(1942, 4, "Metal lÃ­quido")
 
-      atualizar_status(1, "Em manutenção!")
-      atualizar_status(2, "Dispónivel")
-      atualizar_status(3, "Dispónivel")
-      atualizar_status(4, "Em manutenção!")
-      atualizar_status(5, "Em manutenção!")
+      atualizar_status(1, "Em manutenÃ§Ã£o!")
+      atualizar_status(2, "DispÃ³nivel")
+      atualizar_status(3, "DispÃ³nivel")
+      atualizar_status(4, "Em manutenÃ§Ã£o!")
+      atualizar_status(5, "Em manutenÃ§Ã£o!")
       alocar_recursos(num_equipamento, 5)
 
       analisar_processos()
